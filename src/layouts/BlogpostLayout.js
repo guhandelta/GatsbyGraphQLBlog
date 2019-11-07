@@ -1,15 +1,18 @@
 import React from 'react'
+import { graphql } from 'gatsby';
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
-const BlogpostLayout = (props) => {
+const BlogpostLayout = ({data}) => {
     //Any HTML content entered within the <PrimaryLayout></PrimaryLayout> will be accessed through the props.children
+    const post = data.markdownRemark; 
     return (
         <div>
             <Header />            
                 <div className="container">
                     <div className="row justify-content-md-center">
-                        <div className="">This is a Blogpost</div>
+                        <h1>{post.frontmatter.title}</h1>
+                        <div dangerouslySetInnerHTML={{__html: post.html}} />
                     </div>
                 </div>
             <Footer />            
@@ -18,3 +21,14 @@ const BlogpostLayout = (props) => {
 }
 
 export default BlogpostLayout;
+
+export const query = graphql`
+query($slug: String!){
+    markdownRemark(fields: {slug: {eq: $slug}}){
+        html
+        frontmatter{
+            title
+        }
+    }
+}
+`

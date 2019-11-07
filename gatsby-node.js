@@ -28,7 +28,10 @@ exports.createPages = ({graphql, actions}) => {
       result.data.allMarkdownRemark.nodes.forEach((node) => {
         createPage({
             path: node.fields.slug,
-            component: path.resolve('./src/layouts/BlogpostLayout.js')
+            component: path.resolve('./src/layouts/BlogpostLayout.js'),
+            context: { // Helps retrieving the articles by the slug
+                slug: node.fields.slug
+            }
         })
       })
   })
