@@ -25,6 +25,7 @@ module.exports = {
         protocol: `http`,
         hostingWPCOM: false,
       },
-    },    
+    }, 
+    `gatsby-plugin-react-helmet`   
   ],
 }

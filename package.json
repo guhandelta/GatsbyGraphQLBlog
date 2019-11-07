@@ -15,12 +15,14 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "gatsby": "^2.17.6",
+    "gatsby-plugin-react-helmet": "^3.1.13",
     "gatsby-source-filesystem": "^2.1.35",
     "gatsby-source-wordpress": "^3.1.46",
     "gatsby-transformer-remark": "^2.6.32",
     "react": "^16.11.0",
     "react-bootstrap": "^1.0.0-beta.14",
-    "react-dom": "^16.11.0"
+    "react-dom": "^16.11.0",
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

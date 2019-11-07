@@ -29,4 +29,4 @@ query($slug: String!){
         title
     }
 }
-`
+` 
