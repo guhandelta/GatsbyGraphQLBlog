@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from 'gatsby'
 import PrimaryLayout from '../layouts/PrimaryLayout'
 import Post from '../components/Post'
-import { Helmet } from 'react-helmet'; // Helps control header content and here it will help add <meta> in the header
 
 export default ({data}) => {// The data returned by the graphql query, in the props, is obtanied directly by destructurizing the props
     console.log(data); // Console log the data

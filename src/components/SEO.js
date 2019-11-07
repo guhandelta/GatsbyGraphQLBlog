@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet'  // Helps control header content and here it will help add <meta> in the header
 
 const SEO = ({title, description, defaultKeywords, image}) => {
     return (
@@ -21,7 +21,7 @@ const SEO = ({title, description, defaultKeywords, image}) => {
                     const seo = {
                         title: title || defaultTitle,
                         description: description || defaultDescription,
-                        image: `${url}${image || defaultImage}`,
+                        image: `${image ? image : url+defaultImage}`,
                         keywords: keywords || defaultKeywords
                     }
                     return(
