@@ -8,12 +8,6 @@ export default ({data}) => {// The data returned by the graphql query, in the pr
     console.log(data); // Console log the data
     return( // Render the component
         <PrimaryLayout column='col-xs-6'>
-          <Helmet>
-              <title>Wordpress sourced Gatsby Blog</title>
-              <meta name="description" content="THis a a blog designed using Gatsby with wordpress powered content" />
-              <meta name="keywords" content="gatsby, gatsby react, gatsby bootstrap, gatsby project, gatsby blog" />
-              <meta name="robots" content="index,follow" />
-          </Helmet>
           {data.allWordpressPost.nodes.map(node =>(
             <Post 
               image={node.featured_media.source_url} 
@@ -46,4 +40,13 @@ export const query = graphql`
 
    follow => instructing the search engine crawler whether to use/follow the links on the page -> the crawlers will link SEO Juice to the resulting page for the links -> this-
    kidof adds more seo power/optimization to the page
+*/
+
+/*
+  <Helmet>
+      <title>Wordpress sourced Gatsby Blog</title>
+      <meta name="description" content="This a blog designed using Gatsby with wordpress powered content" />
+      <meta name="keywords" content="gatsby, gatsby react, gatsby bootstrap, gatsby project, gatsby blog" />
+      <meta name="robots" content="index,follow" />
+  </Helmet>
 */

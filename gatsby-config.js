@@ -7,7 +7,11 @@
 module.exports = {
   /* Your site config here */
   siteMetadata:{
-    title: "Gatsby-Blog"
+    title: "Gatsby-Blog",
+    description: "This a blog designed using Gatsby with wordpress powered content",
+    keywords: "gatsby, gatsby react, gatsby bootstrap, gatsby project, gatsby blog",
+    image: '/static/gatsby.jpg',
+    url: 'https://www.gatsbyjs.org/'
   },
   plugins:[
     {
