@@ -7,10 +7,13 @@ export default ({data}) => {// The data returned by the graphql query, in the pr
     console.log(data); // Console log the data
     return( // Render the component
         <PrimaryLayout column='col-xs-6'>
+          {data.allMarkdownRemark.nodes.map(node =>(
             <Post 
-                title="First Blogpost" 
-                excerpt="Gatsby is a blazing fast modern site generator for React. The quick start is intended for intermediate to advanced developers. For a gentler intro to Gatsby, head to our tutorial!" 
+              image={node.frontmatter.image} 
+              title={node.frontmatter.title} 
+              excerpt={node.excerpt} 
             />
+          ))}
         </PrimaryLayout>        
     );
 }

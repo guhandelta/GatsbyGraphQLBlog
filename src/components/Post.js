@@ -5,7 +5,7 @@ const Post = (props) => {
     return (
         <div className="p-3">
             <Card>
-                <Card.Img variant="top" src="Gatsby.jpg" />
+                <Card.Img variant="top" src={props.image} />
                 <Card.Body>
                 <Card.Title>{props.title}</Card.Title>
                 <Card.Text>
