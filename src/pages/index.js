@@ -7,12 +7,12 @@ export default ({data}) => {// The data returned by the graphql query, in the pr
     console.log(data); // Console log the data
     return( // Render the component
         <PrimaryLayout column='col-xs-6'>
-          {data.allMarkdownRemark.nodes.map(node =>(
+          {data.allWordpressPost.nodes.map(node =>(
             <Post 
-              image={node.frontmatter.image} 
-              title={node.frontmatter.title} 
+              image={node.featured_media.source_url} 
+              title={node.title} 
               excerpt={node.excerpt} 
-              readMore={node.fields.slug}
+              readMore={node.slug}
             />
           ))}
         </PrimaryLayout>        
@@ -21,18 +21,13 @@ export default ({data}) => {// The data returned by the graphql query, in the pr
 // This query will be added to the props of the component
 export const query = graphql`
 {
-  allMarkdownRemark{
+  allWordpressPost{
     nodes{
-      frontmatter{
-        title
-        date
-        keywords
-        image
-      }
+      slug
+      title
       excerpt
-      html
-      fields{
-        slug
+      featured_media{
+        source_url
       }
     }
   }
