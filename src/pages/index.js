@@ -12,6 +12,7 @@ export default ({data}) => {// The data returned by the graphql query, in the pr
               image={node.frontmatter.image} 
               title={node.frontmatter.title} 
               excerpt={node.excerpt} 
+              readMore={node.fields.slug}
             />
           ))}
         </PrimaryLayout>        
@@ -20,17 +21,20 @@ export default ({data}) => {// The data returned by the graphql query, in the pr
 // This query will be added to the props of the component
 export const query = graphql`
 {
-    allMarkdownRemark{
-      nodes{
-        frontmatter{
-          title
-          date
-          keywords
-          image
-        }
-        excerpt
-        html
+  allMarkdownRemark{
+    nodes{
+      frontmatter{
+        title
+        date
+        keywords
+        image
+      }
+      excerpt
+      html
+      fields{
+        slug
       }
     }
   }
+}
 `
