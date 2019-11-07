@@ -49,4 +49,5 @@ export const query = graphql`
       <meta name="keywords" content="gatsby, gatsby react, gatsby bootstrap, gatsby project, gatsby blog" />
       <meta name="robots" content="index,follow" />
   </Helmet>
-*/
+  */
+  
