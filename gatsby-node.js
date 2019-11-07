@@ -10,3 +10,17 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
   }
 }
+
+exports.createPages = ({graphql, actions}) => {
+  return graphql(`
+    {
+      allMarkdownRemark{
+        nodes{
+          fields{
+            slug
+          }
+        }
+      }  
+    }
+  `).then(result => console.log(JSON.stringify(result)))
+}
